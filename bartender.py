@@ -19,7 +19,7 @@ ingredients = {
 segues = ["What else..", "Okay" ,"Let's see...", "Hmmm...", "Well then...", 
           "Let's get some more ideas..."]
 
-drink_adjs = ["Rabid", "Sea-Sick", "Shredded", "Tired", "Two-Faced", "Broken", "Restless", "Tireless"]
+drink_adjs = ["Rabid", "Sea-Sick", "Shredded", "Tired", "Two-Faced", "Broken", "Restless", "Tireless", "Unbeatable"]
 
 drink_nouns = ["Leviathon", "Krackin'", "White-Whale", "Moby Dick", "Sea-Legs", "Land-Lubbarrr", "Will-o-the-Wisp", "Siren",
               "Treasure Chest", "Treasure Map"]
@@ -52,13 +52,26 @@ def make_drink(Ans):
         if v:
             temp = random.choice(ingredients[k])
             drink.append(temp)
-    print "There ya go matey, enjoy yer libation!"
+    print "There ya go matey!"
+    print
     return drink
 
 def name_drink():
     print "House special...I call it a", random.choice(drink_adjs), random.choice(drink_nouns)
+    print "Enjoy yer libation!"
 
 if __name__ == "__main__":
-    answers = ask_questions()
-    print make_drink(answers)
-    name_drink()
+    thirsty = True
+    while thirsty:
+        answers = ask_questions()
+        print make_drink(answers)
+        name_drink()
+        print
+        print "I see you liked the drink ya ol sea-dog! Can I get yah anothun?"
+        result = raw_input()
+        if result.lower() in ["y", "yes"]:
+            print "Una mas it is."
+            print
+        else:
+            thirsty = False
+        check += 1
