@@ -19,6 +19,11 @@ ingredients = {
 segues = ["What else..", "Okay" ,"Let's see...", "Hmmm...", "Well then...", 
           "Let's get some more ideas..."]
 
+drink_adjs = ["Rabid", "Sea-Sick", "Shredded", "Tired", "Two-Faced", "Broken", "Restless", "Tireless"]
+
+drink_nouns = ["Leviathon", "Krackin'", "White-Whale", "Moby Dick", "Sea-Legs", "Land-Lubbarrr", "Will-o-the-Wisp", "Siren",
+              "Treasure Chest", "Treasure Map"]
+
 def ask_questions():
     ans_dict = {}
     counter = 0
@@ -50,6 +55,10 @@ def make_drink(Ans):
     print "There ya go matey, enjoy yer libation!"
     return drink
 
+def name_drink():
+    print "House special...I call it a", random.choice(drink_adjs), random.choice(drink_nouns)
+
 if __name__ == "__main__":
     answers = ask_questions()
     print make_drink(answers)
+    name_drink()
